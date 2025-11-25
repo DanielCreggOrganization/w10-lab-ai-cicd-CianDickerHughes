@@ -1,4 +1,11 @@
-"""Entry point for the application."""
+"""Entry point for the application.
+
+This module intentionally imports the application object so the `flask`
+command can discover the app. It should not contain secrets in source.
+"""
+
+import os
+import logging
 
 # For application discovery by the 'flask' command.
 from . import app  # noqa: F401
@@ -9,5 +16,9 @@ from . import views  # noqa: F401
 # Time-saver: print a URL you can Ctrl+click to open in a browser.
 # print('http://127.0.0.1:5000/hello/VSCode')
 
-# In hello_app/webapp.py
-AWS_SECRET_KEY = "AKIA1234567890"
+# Read AWS secret from environment to avoid hardcoding credentials.
+AWS_SECRET_KEY = os.environ.get("AWS_SECRET_KEY")
+if not AWS_SECRET_KEY:
+	logging.warning(
+		"AWS_SECRET_KEY not set in environment; some features may fail."
+	)

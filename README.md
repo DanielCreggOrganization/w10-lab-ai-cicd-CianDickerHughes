@@ -1,4 +1,36 @@
 [![Open in Codespaces](https://classroom.github.com/assets/launch-codespace-2972f46106e565e64193e422d61a12cf1da4916b45550586e14ef0a7c637dd04.svg)](https://classroom.github.com/open-in-codespaces?assignment_repo_id=21834161)
+# Python Flask App for CI/CD Lab
+
+This repository contains a simple Python Flask web application used for learning CI/CD concepts with GitHub Actions.
+
+## Installation
+
+To install the required dependencies, run:
+
+```bash
+pip install -r requirements.txt
+```
+
+## Running the Application
+
+To start the Flask development server:
+
+```bash
+python3 -m flask --app startup run
+```
+
+The application will be available at `http://127.0.0.1:5000/`.
+
+## Running Tests
+
+To run the test suite using pytest:
+
+```bash
+python3 -m pytest
+```
+
+---
+
 # Lab: AI-Powered CI/CD with GitHub Actions
 
 ## 🚀 Introduction

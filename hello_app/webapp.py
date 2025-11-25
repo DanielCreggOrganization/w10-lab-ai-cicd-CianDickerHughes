@@ -1,6 +1,10 @@
-# Entry point for the application.
-from . import app    # For application discovery by the 'flask' command. 
-from . import views  # For import side-effects of setting up routes. 
+"""Entry point for the application."""
 
-# Time-saver: output a URL to the VS Code terminal so you can easily Ctrl+click to open a browser
+# For application discovery by the 'flask' command.
+from . import app  # noqa: F401
+
+# Import for side-effects: this module registers routes with the app.
+from . import views  # noqa: F401
+
+# Time-saver: print a URL you can Ctrl+click to open in a browser.
 # print('http://127.0.0.1:5000/hello/VSCode')

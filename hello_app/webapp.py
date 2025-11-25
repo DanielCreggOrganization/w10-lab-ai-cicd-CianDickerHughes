@@ -22,3 +22,10 @@ if not AWS_SECRET_KEY:
 	logging.warning(
 		"AWS_SECRET_KEY not set in environment; some features may fail."
 	)
+	
+    # Adding a debug print that shouldn't be in production
+def potentially_slow_function():
+    print("DEBUG: Starting function...") 
+    import time
+    time.sleep(1) # Hardcoded delay
+    return True
